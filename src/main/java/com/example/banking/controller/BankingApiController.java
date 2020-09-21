@@ -37,7 +37,7 @@ public class BankingApiController {
 	}
 	/**
 	 * @author : DaEunKim
-	 * @Description 신분증 정보 분석 정보 비교 및 저장 API
+	 * @Description 신분증 분석 정보 비교 및 저장 API
 	 */
 	@PostMapping(value = "/updateIdCardInfo")
 	public String updateIdCardInfo(@RequestBody MemberInfo memberInfo, OpenAccountCheckLog openAccountCheckLog) {
