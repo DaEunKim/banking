@@ -11,7 +11,7 @@ import java.util.List;
  * @Description :
  */
 @Mapper
-public interface MemberInfoMapper {
+public interface IdentiCheckMapper {
 
 	List <MemberInfo> selectMemberInfo();
 

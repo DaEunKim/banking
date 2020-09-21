@@ -1,5 +1,4 @@
 DROP TABLE IF EXISTS MEMBER_INFO;
-
 create table MEMBER_INFO
 (
 	INDEX INT auto_increment not null,
@@ -14,6 +13,14 @@ create table MEMBER_INFO
 	IDCARD_REG_DAY DATE,
 	primary key (INDEX)
 );
-
+DROP TABLE IF EXISTS IDENTI_CHECK_ERROR_LOG;
+create table IDENTI_CHECK_ERROR_LOG
+(
+	INDEX INT auto_increment not null,
+	set_account_process_PK INT,
+	error_code VARCHAR(255),
+	error_datetime DATE,
+	primary key (INDEX)
+);
 
 

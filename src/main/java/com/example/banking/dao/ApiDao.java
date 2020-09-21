@@ -1,5 +1,6 @@
 package com.example.banking.dao;
 
+import com.example.banking.model.IdentiCheckErrorLog;
 import com.example.banking.model.MemberInfo;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,10 @@ public class ApiDao {
 	@Autowired
 	private SqlSession sqlSession;
 
+	public String selectName(MemberInfo memberInfo) {
+		return sqlSession.selectOne(NAMESPACE + "selectName", memberInfo);
+	}
+
 	public List<MemberInfo> selectAll(){
 		return sqlSession.selectList(NAMESPACE + "selectAll");
 	}
@@ -29,4 +34,13 @@ public class ApiDao {
 	public int updateIdCardImg(MemberInfo memberInfo) {
 		return sqlSession.update(NAMESPACE+"updateIdCardImg", memberInfo);
 	}
+
+	public int updateIdCardInfo(MemberInfo memberInfo) {
+		return sqlSession.update(NAMESPACE+"updateIdCardInfo", memberInfo);
+	}
+	public int insertIdentiErrorLog(IdentiCheckErrorLog identiCheckErrorLog) {
+		return sqlSession.insert(NAMESPACE+"insertIdentiErrorLog", identiCheckErrorLog);
+	}
+
+
 }

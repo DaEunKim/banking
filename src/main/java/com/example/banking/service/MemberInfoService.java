@@ -1,11 +1,6 @@
 package com.example.banking.service;
 
-import com.example.banking.model.MemberInfo;
-import com.example.banking.repository.MemberInfoMapper;
 import org.springframework.stereotype.Service;
-
-
-import java.util.List;
 
 /**
  * @author : DaEunKim
