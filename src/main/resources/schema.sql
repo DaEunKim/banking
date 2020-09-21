@@ -28,7 +28,7 @@ create table SET_ACCOUNT_PROCESS
 	primary key (INDEX)
 );
 
--- 신분증 확인 오류 로그 테이블 
+-- 신분증 확인 오류 로그 테이블
 DROP TABLE IF EXISTS IDENTI_CHECK_ERROR_LOG;
 create table IDENTI_CHECK_ERROR_LOG
 (
