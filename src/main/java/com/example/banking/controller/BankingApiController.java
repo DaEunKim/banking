@@ -45,8 +45,6 @@ public class BankingApiController {
 		//임의로 set_account_process_pk는 1로 설정
 		memberInfo.setIndex(1);
 		String compName = apiDao.selectName(memberInfo);
-		log.info(compName);
-		log.info(memberInfo.getIdcard_user_name());
 		if(compName.equals(memberInfo.getIdcard_user_name())){
 			apiDao.updateIdCardInfo(memberInfo);
 		}
@@ -55,8 +53,7 @@ public class BankingApiController {
 			identiCheckErrorLog.setSet_account_process_PK(1);
 			identiCheckErrorLog.setError_code("mismatch");
 			identiCheckErrorLog.setError_datetime(now);
-
-			log.info(identiCheckErrorLog.getError_code());
+			
 			apiDao.insertIdentiErrorLog(identiCheckErrorLog);
 		}
 
