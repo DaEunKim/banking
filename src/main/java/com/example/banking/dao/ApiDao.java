@@ -1,8 +1,11 @@
 package com.example.banking.dao;
 
+import com.example.banking.model.MemberInfo;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * @author : DaEunKim
@@ -16,7 +19,14 @@ public class ApiDao {
 	@Autowired
 	private SqlSession sqlSession;
 
-	public String selectName(){
-		return sqlSession.selectOne(NAMESPACE + "selectName");
+	public List<MemberInfo> selectAll(){
+		return sqlSession.selectList(NAMESPACE + "selectAll");
+	}
+	public int insertMemberInfo(MemberInfo memberInfo){
+		return sqlSession.insert(NAMESPACE + "insertMemberInfo", memberInfo);
+	}
+
+	public int updateIdCardImg(MemberInfo memberInfo) {
+		return sqlSession.update(NAMESPACE+"updateIdCardImg", memberInfo);
 	}
 }

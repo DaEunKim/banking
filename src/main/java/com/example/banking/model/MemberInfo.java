@@ -11,23 +11,15 @@ import lombok.Data;
 @Data
 public class MemberInfo {
 	private Integer index;
-	private String userId;
-	private String userName;
-	private String accountNum;
-	private String accountPw;
-	private String idcardImg;
-	private String idcardUserName;
-	private String regisNum;
-	private String idcardNum;
-	private String idcardRegDay;
-
-	public MemberInfo() {
-
-	}
-	public MemberInfo(String userName) {
-		this.userName = userName;
-
-	}
+	private String user_id;
+	private String user_name;
+	private String account_num;
+	private String account_pw;
+	private String idcard_img;
+	private String idcard_user_name;
+	private String regis_num;
+	private String idcard_num;
+	private String idcard_reg_day;
 
 	public Integer getIndex() {
 		return index;
@@ -37,75 +29,91 @@ public class MemberInfo {
 		this.index = index;
 	}
 
-	public String getUserId() {
-		return userId;
+	public String getUser_id() {
+		return user_id;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getUser_name() {
+		return user_name;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
 	}
 
-	public String getAccountNum() {
-		return accountNum;
+	public String getAccount_num() {
+		return account_num;
 	}
 
-	public void setAccountNum(String accountNum) {
-		this.accountNum = accountNum;
+	public void setAccount_num(String account_num) {
+		this.account_num = account_num;
 	}
 
-	public String getAccountPw() {
-		return accountPw;
+	public String getAccount_pw() {
+		return account_pw;
 	}
 
-	public void setAccountPw(String accountPw) {
-		this.accountPw = accountPw;
+	public void setAccount_pw(String account_pw) {
+		this.account_pw = account_pw;
 	}
 
-	public String getIdcardImg() {
-		return idcardImg;
+	public String getIdcard_img() {
+		return idcard_img;
 	}
 
-	public void setIdcardImg(String idcardImg) {
-		this.idcardImg = idcardImg;
+	public void setIdcard_img(String idcard_img) {
+		this.idcard_img = idcard_img;
 	}
 
-	public String getIdcardUserName() {
-		return idcardUserName;
+	public String getIdcard_user_name() {
+		return idcard_user_name;
 	}
 
-	public void setIdcardUserName(String idcardUserName) {
-		this.idcardUserName = idcardUserName;
+	public void setIdcard_user_name(String idcard_user_name) {
+		this.idcard_user_name = idcard_user_name;
 	}
 
-	public String getRegisNum() {
-		return regisNum;
+	public String getRegis_num() {
+		return regis_num;
 	}
 
-	public void setRegisNum(String regisNum) {
-		this.regisNum = regisNum;
+	public void setRegis_num(String regis_num) {
+		this.regis_num = regis_num;
 	}
 
-	public String getIdcardNum() {
-		return idcardNum;
+	public String getIdcard_num() {
+		return idcard_num;
 	}
 
-	public void setIdcardNum(String idcardNum) {
-		this.idcardNum = idcardNum;
+	public void setIdcard_num(String idcard_num) {
+		this.idcard_num = idcard_num;
 	}
 
-	public String getIdcardRegDay() {
-		return idcardRegDay;
+	public String getIdcard_reg_day() {
+		return idcard_reg_day;
 	}
 
-	public void setIdcardRegDay(String idcardRegDay) {
-		this.idcardRegDay = idcardRegDay;
+	public void setIdcard_reg_day(String idcard_reg_day) {
+		this.idcard_reg_day = idcard_reg_day;
+	}
+
+	@Override
+	public String toString() {
+		return "MemberInfo{" +
+				"index=" + index +
+				", user_id='" + user_id + '\'' +
+				", user_name='" + user_name + '\'' +
+				", account_num='" + account_num + '\'' +
+				", account_pw='" + account_pw + '\'' +
+				", idcard_img='" + idcard_img + '\'' +
+				", idcard_user_name='" + idcard_user_name + '\'' +
+				", regis_num='" + regis_num + '\'' +
+				", idcard_num='" + idcard_num + '\'' +
+				", idcard_reg_day='" + idcard_reg_day + '\'' +
+				'}';
 	}
 }
