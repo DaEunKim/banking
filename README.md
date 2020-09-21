@@ -1,5 +1,5 @@
 # banking
-신분증 인증 단계 구현
+# 신분증 인증 단계 구현
 
 개발 환경 : Spring boot, MyBatis, H2, Lombok
 자바 기반의 RDBMS이면서 인메모리 기능이 있어서 H2를 사용하였습니다. 
