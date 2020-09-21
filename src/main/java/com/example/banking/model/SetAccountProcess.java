@@ -5,7 +5,7 @@ import lombok.Data;
 /**
  * @author : DaEunKim
  * @version : 2020.09.21
- * @Description :
+ * @Description : SET_ACCOUNT_PROCESS 테이블 데이터
  */
 @Data
 public class SetAccountProcess {

@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  * @author : DaEunKim
  * @version : 2020.09.11
- * @Description : MemberInfo 테이블
+ * @Description : Member_Info 테이블 데이터
  */
 
 @Data

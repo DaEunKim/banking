@@ -46,22 +46,10 @@ public class BankingApiController {
 			identiCheckService.updateIdCardInfo(memberInfo);
 		}
 		else{
-//			Date now = new Date();
-//			openAccountCheckLog.setSet_account_process_PK(1);
-//			openAccountCheckLog.setType("identi");
-//			openAccountCheckLog.setStatus("error");
-//			openAccountCheckLog.setDatetime(now);
-//			setAccountProcess.setIdenti_check("N");
-//
-//			apiDao.insertIdentiErrorLog(openAccountCheckLog);
 			return identiCheckService.insertLog(openAccountCheckLog, setAccountProcess);
-
 		}
-
-
 		return "send success";
 	}
-
 
 	/**
 	 * @author : DaEunKim

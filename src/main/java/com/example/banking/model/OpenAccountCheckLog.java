@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  * @author : DaEunKim
  * @version : 2020.09.20
- * @Description : OPEN_ACCOUNT_CHECK_LOG 테이블
+ * @Description : OPEN_ACCOUNT_CHECK_LOG 테이블 데이터
  */
 @Data
 public class OpenAccountCheckLog {
