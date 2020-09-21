@@ -23,17 +23,14 @@ public class BankingApiController {
 	@Autowired
 	IdentiCheckService identiCheckService;
 
-	@Autowired
-	private ApiDao apiDao;
-
 	/**
 	 * @author : DaEunKim
 	 * @Description 고객 개발 AP의 유저 정보와 모바일 앱의 신분증 이미지 저장하는 API
 	 */
 	@PostMapping(path = "/insertMemberInfo")
 	public String insertMemberInfo(@RequestBody MemberInfo memberInfo){
-		apiDao.insertMemberInfo(memberInfo);
-		apiDao.updateIdCardImg(memberInfo);
+		identiCheckService.insertMemberInfo(memberInfo);
+		identiCheckService.updateIdCardImg(memberInfo);
 		return "success";
 	}
 	/**
@@ -44,19 +41,21 @@ public class BankingApiController {
 	public String updateIdCardInfo(@RequestBody MemberInfo memberInfo, OpenAccountCheckLog openAccountCheckLog, SetAccountProcess setAccountProcess) {
 		//임의로 set_account_process_pk는 1로 설정
 		memberInfo.setIndex(1);
-		String compName = apiDao.selectName(memberInfo);
+		String compName = identiCheckService.selectName(memberInfo);
 		if(compName.equals(memberInfo.getIdcard_user_name())){
-			apiDao.updateIdCardInfo(memberInfo);
+			identiCheckService.updateIdCardInfo(memberInfo);
 		}
 		else{
-			Date now = new Date();
-			openAccountCheckLog.setSet_account_process_PK(1);
-			openAccountCheckLog.setType("identi");
-			openAccountCheckLog.setStatus("error");
-			openAccountCheckLog.setDatetime(now);
-			setAccountProcess.setIdenti_check("N");
+//			Date now = new Date();
+//			openAccountCheckLog.setSet_account_process_PK(1);
+//			openAccountCheckLog.setType("identi");
+//			openAccountCheckLog.setStatus("error");
+//			openAccountCheckLog.setDatetime(now);
+//			setAccountProcess.setIdenti_check("N");
+//
+//			apiDao.insertIdentiErrorLog(openAccountCheckLog);
+			return identiCheckService.insertLog(openAccountCheckLog, setAccountProcess);
 
-			apiDao.insertIdentiErrorLog(openAccountCheckLog);
 		}
 
 
@@ -70,7 +69,7 @@ public class BankingApiController {
 	 */
 	@GetMapping("/selectAll")
 	public List selectAll() {
-		List<MemberInfo> selectAll = apiDao.selectAll();
+		List<MemberInfo> selectAll = identiCheckService.selectAll();
 		return selectAll;
 	}
 
