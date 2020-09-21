@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.banking.dao">
+<!--    <insert id="insertIdCardImg" parameterType="com.example.banking.domain.MemberInfo">-->
+<!--        INSERT INTO MEMBER_INFO(-->
+<!--        idcard_img-->
+<!--        ) VALUES(-->
+<!--        #{idcardImg}-->
+<!--        )-->
+<!--    </insert>-->
+    <select id="selectName" resultType="string">
+        select user_name from MEMBER_INFO limit 1
+    </select>
+</mapper>
