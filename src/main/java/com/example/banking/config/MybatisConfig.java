@@ -18,7 +18,7 @@ import javax.sql.DataSource;
 /**
  * @author : DaEunKim
  * @version : 2020.09.19
- * @Description :
+ * @Description : MyBatisConfig (설정 파일)
  */
 @Slf4j
 @Configuration

@@ -1,11 +1,12 @@
 package com.example.banking.model;
 
 import lombok.Data;
+import java.util.Date;
 
 /**
  * @author : DaEunKim
  * @version : 2020.09.11
- * @Description :
+ * @Description : MemberInfo 테이블
  */
 
 @Data
@@ -19,7 +20,7 @@ public class MemberInfo {
 	private String idcard_user_name;
 	private String regis_num;
 	private String idcard_num;
-	private String idcard_reg_day;
+	private Date idcard_reg_day;
 
 	public Integer getIndex() {
 		return index;
@@ -93,27 +94,11 @@ public class MemberInfo {
 		this.idcard_num = idcard_num;
 	}
 
-	public String getIdcard_reg_day() {
+	public Date getIdcard_reg_day() {
 		return idcard_reg_day;
 	}
 
-	public void setIdcard_reg_day(String idcard_reg_day) {
+	public void setIdcard_reg_day(Date idcard_reg_day) {
 		this.idcard_reg_day = idcard_reg_day;
-	}
-
-	@Override
-	public String toString() {
-		return "MemberInfo{" +
-				"index=" + index +
-				", user_id='" + user_id + '\'' +
-				", user_name='" + user_name + '\'' +
-				", account_num='" + account_num + '\'' +
-				", account_pw='" + account_pw + '\'' +
-				", idcard_img='" + idcard_img + '\'' +
-				", idcard_user_name='" + idcard_user_name + '\'' +
-				", regis_num='" + regis_num + '\'' +
-				", idcard_num='" + idcard_num + '\'' +
-				", idcard_reg_day='" + idcard_reg_day + '\'' +
-				'}';
 	}
 }

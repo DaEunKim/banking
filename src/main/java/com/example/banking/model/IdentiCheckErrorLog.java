@@ -1,8 +1,6 @@
 package com.example.banking.model;
 
-
 import lombok.Data;
-
 import java.util.Date;
 
 /**

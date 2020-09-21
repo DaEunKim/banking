@@ -53,7 +53,7 @@ public class BankingApiController {
 			identiCheckErrorLog.setSet_account_process_PK(1);
 			identiCheckErrorLog.setError_code("mismatch");
 			identiCheckErrorLog.setError_datetime(now);
-			
+
 			apiDao.insertIdentiErrorLog(identiCheckErrorLog);
 		}
 
