@@ -46,7 +46,7 @@ public class BankingApiController {
 			identiCheckService.updateIdCardInfo(memberInfo);
 		}
 		else{
-			return identiCheckService.insertLog(openAccountCheckLog, setAccountProcess);
+			identiCheckService.insertLog(openAccountCheckLog, setAccountProcess);
 		}
 		return "send success";
 	}
