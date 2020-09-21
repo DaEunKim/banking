@@ -1,5 +1,6 @@
 package com.example.banking.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import java.util.Date;
 
@@ -20,6 +21,8 @@ public class MemberInfo {
 	private String idcard_user_name;
 	private String regis_num;
 	private String idcard_num;
+	
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date idcard_reg_day;
 
 	public Integer getIndex() {

@@ -25,10 +25,10 @@
         WHERE user_id=#{user_id}
     </update>
 
-    <insert id="insertIdentiErrorLog" parameterType="com.example.banking.model.IdentiCheckErrorLog">
+    <insert id="insertIdentiErrorLog" parameterType="com.example.banking.model.OpenAccountCheckLog">
         INSERT INTO
-        IDENTI_CHECK_ERROR_LOG (set_account_process_PK, error_code, error_datetime)
-        VALUES (#{set_account_process_PK}, #{error_code}, #{error_datetime});
+        IDENTI_CHECK_ERROR_LOG (set_account_process_PK, type, status)
+        VALUES (#{set_account_process_PK}, #{type}, #{status});
     </insert>
 
 </mapper>

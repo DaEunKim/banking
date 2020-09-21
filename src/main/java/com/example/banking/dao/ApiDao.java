@@ -1,7 +1,7 @@
 package com.example.banking.dao;
 
-import com.example.banking.model.IdentiCheckErrorLog;
 import com.example.banking.model.MemberInfo;
+import com.example.banking.model.OpenAccountCheckLog;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -37,8 +37,8 @@ public class ApiDao {
 	public int updateIdCardInfo(MemberInfo memberInfo) {
 		return sqlSession.update(NAMESPACE+"updateIdCardInfo", memberInfo);
 	}
-	public int insertIdentiErrorLog(IdentiCheckErrorLog identiCheckErrorLog) {
-		return sqlSession.insert(NAMESPACE+"insertIdentiErrorLog", identiCheckErrorLog);
+	public int insertIdentiErrorLog(OpenAccountCheckLog openAccountCheckLog) {
+		return sqlSession.insert(NAMESPACE+"insertIdentiErrorLog", openAccountCheckLog);
 	}
 
 

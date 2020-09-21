@@ -1,8 +1,8 @@
 package com.example.banking.controller;
 
 import com.example.banking.dao.ApiDao;
-import com.example.banking.model.IdentiCheckErrorLog;
 import com.example.banking.model.MemberInfo;
+import com.example.banking.model.OpenAccountCheckLog;
 import com.example.banking.service.IdentiCheckService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +40,7 @@ public class BankingApiController {
 	 * @Description 신분증 정보 분석 정보 비교 및 저장 API
 	 */
 	@PostMapping(value = "/updateIdCardInfo")
-	public String updateIdCardInfo(@RequestBody MemberInfo memberInfo, IdentiCheckErrorLog identiCheckErrorLog) {
+	public String updateIdCardInfo(@RequestBody MemberInfo memberInfo, OpenAccountCheckLog openAccountCheckLog) {
 		//임의로 set_account_process_pk는 1로 설정
 		memberInfo.setIndex(1);
 		String compName = apiDao.selectName(memberInfo);
@@ -49,11 +49,12 @@ public class BankingApiController {
 		}
 		else{
 			Date now = new Date();
-			identiCheckErrorLog.setSet_account_process_PK(1);
-			identiCheckErrorLog.setError_code("mismatch");
-			identiCheckErrorLog.setError_datetime(now);
+			openAccountCheckLog.setSet_account_process_PK(1);
+			openAccountCheckLog.setType("identi");
+			openAccountCheckLog.setStatus("error");
+			openAccountCheckLog.setDatetime(now);
 
-			apiDao.insertIdentiErrorLog(identiCheckErrorLog);
+			apiDao.insertIdentiErrorLog(openAccountCheckLog);
 		}
 
 

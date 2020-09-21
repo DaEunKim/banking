@@ -24,18 +24,18 @@ create table SET_ACCOUNT_PROCESS
 	last_page INT, -- 마지막 완료 페이지 번호
 	account_type VARCHAR(100), -- 개설 통장 종류
 	identi_check VARCHAR(1), -- 신분증 확인 여부 (Y/N)
-	identi_check_datetime DATE, -- 신분증 확인 완료 시간
 	primary key (INDEX)
 );
 
 -- 신분증 확인 오류 로그 테이블
-DROP TABLE IF EXISTS IDENTI_CHECK_ERROR_LOG;
-create table IDENTI_CHECK_ERROR_LOG
+DROP TABLE IF EXISTS OPEN_ACCOUNT_CHECK_LOG;
+create table OPEN_ACCOUNT_CHECK_LOG
 (
 	INDEX INT auto_increment not null,
 	set_account_process_PK INT, -- SET_ACCOUNT_PROCESS 테이블 PK (계좌 개설 절차 정보)
-	error_code VARCHAR(255), -- 오류 발생 사유
-	error_datetime DATE, -- 오류 발생 일시
+	type VARCHAR(100), -- 로그 타입 (identi, certifi, transfer)
+	status VARCHAR(100), -- 정상, 오류 구별
+	log_datetime DATE, -- 로그  발생 일시
 	primary key (INDEX)
 );
 
