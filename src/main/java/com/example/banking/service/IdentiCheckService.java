@@ -1,5 +1,7 @@
 package com.example.banking.service;
 
+import com.example.banking.dao.ApiDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -8,8 +10,9 @@ import org.springframework.stereotype.Service;
  * @Description :
  */
 @Service
-
-public class MemberInfoService {
+public class IdentiCheckService {
+	@Autowired
+	private ApiDao apiDao;
 
 //	MemberInfoMapper memberInfoMapper;
 

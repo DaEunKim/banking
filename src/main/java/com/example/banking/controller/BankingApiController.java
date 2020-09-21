@@ -3,11 +3,10 @@ package com.example.banking.controller;
 import com.example.banking.dao.ApiDao;
 import com.example.banking.model.IdentiCheckErrorLog;
 import com.example.banking.model.MemberInfo;
-import com.example.banking.service.MemberInfoService;
+import com.example.banking.service.IdentiCheckService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.Date;
 import java.util.List;
 
@@ -21,7 +20,7 @@ import java.util.List;
 @RequestMapping("/bankingAPI/")
 public class BankingApiController {
 	@Autowired
-	MemberInfoService memberInfoService;
+	IdentiCheckService identiCheckService;
 
 	@Autowired
 	private ApiDao apiDao;
